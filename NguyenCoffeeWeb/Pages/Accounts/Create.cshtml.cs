@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using NguyenCoffeeWeb.Models;
 
 namespace NguyenCoffeeWeb.Pages.Accounts
@@ -20,17 +15,21 @@ namespace NguyenCoffeeWeb.Pages.Accounts
 
         public IActionResult OnGet()
         {
+            if (HttpContext.Session.GetString("Type") != "0")
+            {
+                return Redirect("/Index");
+            }
             return Page();
         }
 
         [BindProperty]
         public Account Account { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Accounts == null || Account == null)
+            if (!ModelState.IsValid || _context.Accounts == null || Account == null)
             {
                 return Page();
             }

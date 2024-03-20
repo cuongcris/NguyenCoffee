@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {}
+    "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {
+    "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+        "projectUniqueName": "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
         "projectName": "NguyenCoffeeWeb",
-        "projectPath": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\obj\\",
+        "projectPath": "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+        "packagesPath": "C:\\Users\\lvttr\\.nuget\\packages\\",
+        "outputPath": "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lvttr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -24,18 +20,23 @@ namespace NguyenCoffeeWeb.Pages.Products
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
+            if (HttpContext.Session.GetString("Type") != "0")
+            {
+                return Redirect("/Index");
+            }
+
             if (id == null || _context.Products == null)
             {
                 return NotFound();
             }
 
-            var product =  await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
+            Product? product = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
                 return NotFound();
             }
             Product = product;
-           ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Id");
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Id");
             return Page();
         }
 
@@ -71,7 +72,7 @@ namespace NguyenCoffeeWeb.Pages.Products
 
         private bool ProductExists(Guid id)
         {
-          return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NguyenCoffeeWeb.Models;
@@ -19,22 +15,26 @@ namespace NguyenCoffeeWeb.Pages.Accounts
         }
 
         [BindProperty]
-      public Account Account { get; set; } = default!;
+        public Account Account { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
+            if (HttpContext.Session.GetString("Type") != "0")
+            {
+                return Redirect("/Index");
+            }
             if (id == null || _context.Accounts == null)
             {
                 return NotFound();
             }
 
-            var account = await _context.Accounts.FirstOrDefaultAsync(m => m.Id == id);
+            Account? account = await _context.Accounts.FirstOrDefaultAsync(m => m.Id == id);
 
             if (account == null)
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Account = account;
             }
@@ -47,7 +47,7 @@ namespace NguyenCoffeeWeb.Pages.Accounts
             {
                 return NotFound();
             }
-            var account = await _context.Accounts.FindAsync(id);
+            Account? account = await _context.Accounts.FindAsync(id);
 
             if (account != null)
             {

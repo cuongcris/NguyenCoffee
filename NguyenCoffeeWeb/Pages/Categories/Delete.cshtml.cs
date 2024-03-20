@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NguyenCoffeeWeb.Models;
@@ -19,22 +15,27 @@ namespace NguyenCoffeeWeb.Pages.Categories
         }
 
         [BindProperty]
-      public Category Category { get; set; } = default!;
+        public Category Category { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
+            if (HttpContext.Session.GetString("Type") != "0")
+            {
+                return Redirect("/Index");
+            }
+
             if (id == null || _context.Categories == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Categories.FirstOrDefaultAsync(m => m.Id == id);
+            Category? category = await _context.Categories.FirstOrDefaultAsync(m => m.Id == id);
 
             if (category == null)
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Category = category;
             }
@@ -47,7 +48,7 @@ namespace NguyenCoffeeWeb.Pages.Categories
             {
                 return NotFound();
             }
-            var category = await _context.Categories.FindAsync(id);
+            Category? category = await _context.Categories.FindAsync(id);
 
             if (category != null)
             {
