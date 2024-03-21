@@ -6,6 +6,18 @@
     .setheight-img {
         height: 120px;
     }
+
+    .TitleOnlineProduct{
+        text-align:center;
+        margin-bottom:50px;
+        padding-top:-50px;
+    }
+
+    .product-image {
+        width: 207px;
+        height: 207px;
+        object-fit: cover;
+    }
 </style>
 <!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5">
@@ -19,70 +31,83 @@
 </div>
 <div class="container-fluid pt-5">
     <div class="container">
-        <div class="section-title">
+        <div class="TitleOnlineProduct">
             <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Online Products</h4>
             <h1 class="display-4">Fresh & Organic Beans</h1>
         </div>
-        <div class="row">
-            <div class="col-lg-6 mb-5">
-                <div class="row align-items-center">
-                    <div class="col-sm-5">
-                        <img class="img-fluid mb-3 mb-sm-0" src="img/service-1.jpg" alt="">
-                    </div>
-                    <div class="col-sm-7">
-                        <h4><i class="fa fa-truck service-icon"></i>Fastest Door Delivery</h4>
-                        <p class="m-0">
-                            Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit
-                            invidunt, dolore tempor diam ipsum takima erat tempor
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mb-5">
-                <div class="row align-items-center">
-                    <div class="col-sm-5">
-                        <img class="img-fluid mb-3 mb-sm-0" src="img/service-2.jpg" alt="">
-                    </div>
-                    <div class="col-sm-7">
-                        <h4><i class="fa fa-coffee service-icon"></i>Fresh Coffee Beans</h4>
-                        <p class="m-0">
-                            Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit
-                            invidunt, dolore tempor diam ipsum takima erat tempor
-                        </p>
+        <div class="row" id="productContainer">
+            @foreach (var item in Model.Product.Take(4))
+            {
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center ">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0 product-image " src="@Html.DisplayFor(modelItem => item.Image)" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-coffee service-icon"></i> @Html.DisplayFor(modelItem => item.ProductName)</h4>
+                            <p class="m-0 description">
+                                @item.Description
+                            </p>
+                            <div class=" align-content-center">
+
+                                <a class="btn btn-primary" asp-page="./OnlineProductDetail" asp-route-id="@item.Id">View Detail</a> 
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-5">
-                <div class="row align-items-center">
-                    <div class="col-sm-5">
-                        <img class="img-fluid mb-3 mb-sm-0" src="img/service-3.jpg" alt="">
-                    </div>
-                    <div class="col-sm-7">
-                        <h4><i class="fa fa-award service-icon"></i>Best Quality Coffee</h4>
-                        <p class="m-0">
-                            Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit
-                            invidunt, dolore tempor diam ipsum takima erat tempor
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mb-5">
-                <div class="row align-items-center">
-                    <div class="col-sm-5">
-                        <img class="img-fluid mb-3 mb-sm-0" src="img/service-4.jpg" alt="">
-                    </div>
-                    <div class="col-sm-7">
-                        <h4><i class="fa fa-table service-icon"></i>Online Table Booking</h4>
-                        <p class="m-0">
-                            Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit
-                            invidunt, dolore tempor diam ipsum takima erat tempor
-                        </p>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
-<div >
-    <input class="btn btn-primary" type="submit" value="LoadMore"/>
+<div class="text-center">
+    <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
+
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var descriptions = document.querySelectorAll('.description');
+        descriptions.forEach(function (description) {
+            var text = description.textContent;
+            if (text.length > 200) {
+                description.textContent = text.substring(0, 200) + '...';
+            }
+        });
+    });
+</script>
+<script>
+    var skip = 4; // Số sản phẩm đã hiển thị ban đầu
+    var take = 4; // Số sản phẩm sẽ lấy thêm mỗi lần nhấn nút "Load More"
+
+    document.getElementById("loadMoreBtn").addEventListener("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "OnlineProducts/Index?handler=LoadMoreProducts&skip=" + skip + "&take=" + take, true);
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                var products = JSON.parse(xhr.responseText);
+                var productContainer = document.getElementById("productContainer");
+                products.forEach(function (product) {
+                    console.log(product)
+                    var productHtml = `<div class="col-lg-6 mb-5">
+                                                <div class="row align-items-center">
+                                                    <div class="col-sm-5">
+                                                                <img class="img-fluid mb-3 mb-sm-0 product-image" src="${product.image}" alt="">
+                                                    </div>
+                                                    <div class="col-sm-7">
+                                                        <h4><i class="fa fa-coffee service-icon"></i> ${product.productName}</h4>
+                                                            <p class="m-0">${product.description}</p>
+                                                        <button type="submit" class="btn btn-primary">Add to Card</button>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                    productContainer.insertAdjacentHTML('beforeend', productHtml);
+                });
+                skip += take; // Tăng số sản phẩm đã hiển thị
+            } else {
+                console.error(xhr.statusText);
+            }
+        };
+        xhr.send();
+    });
+</script>
+

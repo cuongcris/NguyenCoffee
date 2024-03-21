@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NguyenCoffeeWeb.Models;
@@ -13,21 +17,15 @@ namespace NguyenCoffeeWeb.Pages.Products
         {
             _context = context;
         }
+        public IList<Product> Product { get;set; } = default!;
 
-        public IList<Product> Product { get; set; } = default!;
-
-        public async Task<IActionResult> OnGetAsync()
+        public async Task OnGetAsync()
         {
-            if (HttpContext.Session.GetString("Type") != "0")
-            {
-                return Redirect("/Index");
-            }
             if (_context.Products != null)
             {
                 Product = await _context.Products
                 .Include(p => p.Category).ToListAsync();
             }
-            return Page();
         }
     }
 }

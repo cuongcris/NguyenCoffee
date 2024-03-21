@@ -22,6 +22,7 @@ namespace NguyenCoffeeWeb.Models
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
         public virtual DbSet<OrderInTable> OrderInTables { get; set; } = null!;
         public virtual DbSet<OrdersOnline> OrdersOnlines { get; set; } = null!;
+        public virtual DbSet<Payment> Payments { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -148,6 +149,17 @@ namespace NguyenCoffeeWeb.Models
                     .WithMany(p => p.OrdersOnlines)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("public_Orders_UserId_fkey");
+            });
+
+            modelBuilder.Entity<Payment>(entity =>
+            {
+                entity.ToTable("Payment");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnName("created_at")
+                    .HasDefaultValueSql("now()");
             });
 
             modelBuilder.Entity<Product>(entity =>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {}
+    "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {}
   },
   "projects": {
-    "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {
+    "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
         "projectName": "NguyenCoffeeWeb",
-        "projectPath": "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
-        "packagesPath": "C:\\Users\\lvttr\\.nuget\\packages\\",
-        "outputPath": "E:\\Chuyen nganh\\Dotnet\\PRN221\\Project\\NguyenCoffee-main\\NguyenCoffeeWeb\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lvttr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,17 +44,25 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.27, )"
+              "version": "[6.0.28, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.27, )"
+              "version": "[6.0.28, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.27, )"
+              "version": "[6.0.28, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -88,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
