@@ -47,7 +47,7 @@ namespace NguyenCoffeeWeb.Pages.Authentication
                 });
             }
 
-            if (acc.Type == 0) return Redirect("/Products");
+            if (acc.Type == 0) return Redirect("/Admin/Products");
             else return Redirect("/Index");
         }
     }

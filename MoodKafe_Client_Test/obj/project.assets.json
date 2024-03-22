@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\lvttr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj",
+      "projectUniqueName": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj",
       "projectName": "MoodKafe_Client_Test",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\MoodKafe_Client_Test\\obj\\",
+      "projectPath": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj",
+      "packagesPath": "C:\\Users\\lvttr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New\\NguyenCoffee\\MoodKafe_Client_Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lvttr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

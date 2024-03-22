@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {}
+    "C:\\Users\\lvttr\\OneDrive\\Desktop\\New\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {
+    "C:\\Users\\lvttr\\OneDrive\\Desktop\\New\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+        "projectUniqueName": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
         "projectName": "NguyenCoffeeWeb",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\obj\\",
+        "projectPath": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+        "packagesPath": "C:\\Users\\lvttr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New\\NguyenCoffee\\NguyenCoffeeWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lvttr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
