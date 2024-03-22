@@ -9,109 +9,121 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NguyenCoffeeWeb
 build_property.RootNamespace = NguyenCoffeeWeb
-build_property.ProjectDir = C:\Users\Admin\source\PRN221\MoodKafe_Client_Test\NguyenCoffeeWeb\
+build_property.ProjectDir = C:\Users\Admin\Desktop\1_PRN221\Project\NguyenCoffee\NguyenCoffeeWeb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Admin\source\PRN221\MoodKafe_Client_Test\NguyenCoffeeWeb
+build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\1_PRN221\Project\NguyenCoffee\NguyenCoffeeWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Accounts/Create.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Accounts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Accounts/Delete.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Accounts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Accounts/Details.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Accounts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Accounts/Edit.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Accounts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Accounts/Index.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Categories/Create.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Authentication/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Authentication/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Authentication/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Categories/Delete.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Categories/Details.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Categories/Edit.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Categories/Index.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Error.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Index.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Menu.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Menu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/OnlineProducts/Index.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/OnlineProducts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT25saW5lUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/OnlineProducts/OnlineProductDetail.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/OnlineProducts/OnlineProductDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT25saW5lUHJvZHVjdHNcT25saW5lUHJvZHVjdERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Privacy.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Products/Create.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Products/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Products/Delete.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Products/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Products/Details.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Products/Edit.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Products/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Products/Index.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/_ViewImports.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/_ViewStart.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/source/PRN221/MoodKafe_Client_Test/NguyenCoffeeWeb/Pages/Shared/_Layout.cshtml]
+[C:/Users/Admin/Desktop/1_PRN221/Project/NguyenCoffee/NguyenCoffeeWeb/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-384g0ntpq7

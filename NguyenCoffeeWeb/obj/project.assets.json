@@ -11180,11 +11180,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
       "projectName": "NguyenCoffeeWeb",
-      "projectPath": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

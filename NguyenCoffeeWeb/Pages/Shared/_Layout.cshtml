@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using NguyenCoffeeWeb.Models
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var session = HttpContextAccessor.HttpContext.Session;
+    var accJson = session.GetString("Account"); // Lấy chuỗi JSON từ session
+    var acc = accJson != null ? Newtonsoft.Json.JsonConvert.DeserializeObject<Account>(accJson) : null;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -20,6 +30,30 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+        .dropdown-menu li {
+            list-style-type: none;
+        }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+</style>
 <body>
     <!-- Navbar Start -->
     <div class="container-fluid p-0 nav-bar">
@@ -37,7 +71,22 @@
                     <a asp-page="./Menu" class="nav-item nav-link active">Menu</a>
                     <a href="@Url.Action("Privacy", "Home")" class="nav-item nav-link">Active Map</a>
                     <a href="@Url.Action("Index", "Home")" class="nav-item nav-link active">Chat wih us</a>
-                    <a href="@Url.Action("Privacy", "Home")" class="nav-item nav-link">Login</a>
+                    @if (accJson == null)
+                    {
+                        <a asp-page="./Authentication/Login" class="nav-item nav-link active">Login</a>
+                    }
+                    else
+                    {
+                        <div class="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg>
+                            <ul class="dropdown-menu" style="height: auto;" id="dropdownMenu">
+                                <li>Hello @acc.FullName</li>
+                                <li><a asp-page="./Authentication/Logout" class="nav-item nav-link active">Logout</a></li>
+                            </ul>
+                        </div>
+                    }
                 </div>
             </div>
         </nav>

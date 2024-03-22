@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DKrZHF2TlhTzGV/lN/wltdSsqTJ3fm+VYdlQ9+kKwoY518bxzhO6FaJsOqjcLZJkb19nny6iAyahOWkCY0tVXA==",
+  "dgSpecHash": "adEOU72HR5CjiG5Ahf31rfH2EzTFRamV9PPYQgHaSoXa8lOPolkCVSTjYqH+5o3mfwKLAx7X9q2KwrxkUqVl9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\source\\PRN221\\MoodKafe_Client_Test\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\1_PRN221\\Project\\NguyenCoffee\\NguyenCoffeeWeb\\NguyenCoffeeWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
