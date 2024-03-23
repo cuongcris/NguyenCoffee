@@ -36,6 +36,7 @@ namespace NguyenCoffeeWeb.Pages.Authentication
             }
 
             Account.Type = 1;
+            Account.CreatedAt = DateTime.Now;
             dbContext.Accounts.Add(Account);
             await dbContext.SaveChangesAsync();
             return Redirect("~/Authentication/Login");

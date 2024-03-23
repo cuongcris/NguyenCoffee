@@ -1,4 +1,12 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(() => {
+    //    LoadPostData();
 
-// Write your JavaScript code.
+    var connection = new signalR.HubConnectionBuilder().withUrl("/signalrServer").build();
+    connection.start();
+
+    connection.on("LoadAccount", function () {
+        //        LoadPostData();
+        alert("Accounts loaded successfully!");
+        location.href = '/Admin/Accounts';
+    })
+})

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
 using NguyenCoffeeWeb.Models;
 
 namespace NguyenCoffeeWeb.Pages.Accounts
@@ -7,10 +8,12 @@ namespace NguyenCoffeeWeb.Pages.Accounts
     public class CreateModel : PageModel
     {
         private readonly NguyenCoffeeWeb.Models.postgresContext _context;
+        private readonly IHubContext<SignalrServer> _signalHub;
 
-        public CreateModel(NguyenCoffeeWeb.Models.postgresContext context)
+        public CreateModel(NguyenCoffeeWeb.Models.postgresContext context, IHubContext<SignalrServer> signalHub)
         {
             _context = context;
+            _signalHub = signalHub;
         }
 
         public IActionResult OnGet()
@@ -36,7 +39,7 @@ namespace NguyenCoffeeWeb.Pages.Accounts
 
             _context.Accounts.Add(Account);
             await _context.SaveChangesAsync();
-
+            await _signalHub.Clients.All.SendAsync("LoadAccount");
             return RedirectToPage("./Index");
         }
     }

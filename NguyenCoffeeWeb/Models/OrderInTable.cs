@@ -14,9 +14,9 @@ namespace NguyenCoffeeWeb.Models
         public DateTime CreatedAt { get; set; }
         public Guid? UserId { get; set; }
         public short? TableNumber { get; set; }
-        public string? ImageAi { get; set; }
+        public string ImageAi { get; set; }
 
-        public virtual Account? User { get; set; }
+        public virtual Account User { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

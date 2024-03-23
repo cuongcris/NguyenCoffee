@@ -8,6 +8,7 @@ namespace NguyenCoffeeWeb.Pages.Authentication
         public IActionResult OnGet()
         {
             HttpContext.Session.Remove("Account");
+            HttpContext.Session.Remove("Type");
             Response.Cookies.Delete("EmailInCookie");
             Response.Cookies.Delete("PassInCookie");
 

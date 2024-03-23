@@ -16,14 +16,14 @@ namespace NguyenCoffeeWeb.Models
         {
         }
 
-        public virtual DbSet<Account> Accounts { get; set; } = null!;
-        public virtual DbSet<Category> Categories { get; set; } = null!;
-        public virtual DbSet<History> Histories { get; set; } = null!;
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
-        public virtual DbSet<OrderInTable> OrderInTables { get; set; } = null!;
-        public virtual DbSet<OrdersOnline> OrdersOnlines { get; set; } = null!;
-        public virtual DbSet<Payment> Payments { get; set; } = null!;
-        public virtual DbSet<Product> Products { get; set; } = null!;
+        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<History> Histories { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<OrderInTable> OrderInTables { get; set; }
+        public virtual DbSet<OrdersOnline> OrdersOnlines { get; set; }
+        public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -65,7 +65,11 @@ namespace NguyenCoffeeWeb.Models
                     .HasColumnType("timestamp without time zone")
                     .HasColumnName("created_at");
 
+                entity.Property(e => e.Email).IsRequired();
+
                 entity.Property(e => e.FullName).HasColumnName("Full Name");
+
+                entity.Property(e => e.Password).IsRequired();
             });
 
             modelBuilder.Entity<Category>(entity =>
@@ -137,13 +141,15 @@ namespace NguyenCoffeeWeb.Models
             {
                 entity.ToTable("OrdersOnline");
 
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasDefaultValueSql("gen_random_uuid()");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("timestamp without time zone")
                     .HasColumnName("created_at");
+
+                entity.Property(e => e.PackagingDate).HasColumnType("timestamp without time zone");
+
+                entity.Property(e => e.ShippedDate).HasColumnType("timestamp without time zone");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.OrdersOnlines)

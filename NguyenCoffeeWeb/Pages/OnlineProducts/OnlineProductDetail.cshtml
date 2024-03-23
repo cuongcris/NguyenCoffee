@@ -25,12 +25,12 @@
     <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active setheight-img">
-                <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                <img class="w-100" src="~/img//carousel-2.jpg" alt="Image">
             </div>
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" style="margin-bottom: 50px;">
 	<div class="card">
 		<div class="container-fliud">
 			<div class="wrapper row">
@@ -56,28 +56,11 @@
 					<p class="product-description">@Html.DisplayFor(model => model.Product.Description)</p>
 					<h4 class="price"><span>@Html.DisplayFor(model => model.Product.UnitPrice) vnđ</span></h4>
 					<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-					<h5 class="sizes">
-						sizes:
-						<span class="size" data-toggle="tooltip" title="small">s</span>
-						<span class="size" data-toggle="tooltip" title="medium">m</span>
-						<span class="size" data-toggle="tooltip" title="large">l</span>
-						<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-					</h5>
-
-					<div class="qty-input">
-						<button class="" data-action="minus" type="button">-</button>
-						<input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
-						<button class="" data-action="add" type="button">+</button>
-					</div>
-					<h5 class="colors">
-						colors:
-						<span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-						<span class="color green"></span>
-						<span class="color blue"></span>
-					</h5>
 					<div class="action">
-						<button class="add-to-cart btn btn-default" type="button">add to cart</button>
-						<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+						<form method="post" asp-page-handler="OnPost">
+							<input type="hidden" name="productId" value="@Model.Product.Id" />
+							<button type="submit" class="add-to-cart btn btn-default">add to cart</button>
+						</form>
 					</div>
 				</div>
 			</div>

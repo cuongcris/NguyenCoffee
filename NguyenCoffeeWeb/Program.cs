@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using NguyenCoffeeWeb;
 using NguyenCoffeeWeb.Models;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<postgresContext>(options =>
 options.UseNpgsql(builder.Configuration.GetConnectionString("MyDb")
 ));
+builder.Services.AddSignalR();
 WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,7 +31,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.UseSession(); //session middleware
-
+app.MapHub<SignalrServer>("signalrServer");
 app.MapRazorPages();
 
 app.Run();

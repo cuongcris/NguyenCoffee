@@ -18,7 +18,7 @@
     <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active setheight-img">
-                <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                <img class="w-100" src="~/img//carousel-2.jpg" alt="Image">
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.UnitPrice)
                     </td>
-                    <td style="width:200px">
+                    <td>
                         @Html.DisplayFor(modelItem => item.Image)
                     </td>
                     <td>
@@ -79,3 +79,13 @@
         </tbody>
     </table>
 </div>
+<style>
+    .container {
+        overflow-y: auto;
+    }
+
+    .table td {
+        max-width: 100px; /* Đặt chiều cao tối đa cho mỗi ô là 100px */
+        overflow: hidden; /* Ẩn phần nội dung vượt quá chiều cao tối đa */
+    }
+</style>
