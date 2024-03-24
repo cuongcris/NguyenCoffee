@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NguyenCoffeeWeb;
+using NguyenCoffeeWeb.Hubs;
 using NguyenCoffeeWeb.Models;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -32,6 +33,7 @@ app.UseAuthorization();
 
 app.UseSession(); //session middleware
 app.MapHub<SignalrServer>("signalrServer");
+app.MapHub<ChatHub>("/chatHub");
 app.MapRazorPages();
 
 app.Run();

@@ -6,6 +6,11 @@
     var session = HttpContextAccessor.HttpContext.Session;
     var accJson = session.GetString("Account"); // Lấy chuỗi JSON từ session
     var acc = accJson != null ? Newtonsoft.Json.JsonConvert.DeserializeObject<Account>(accJson) : null;
+    var type = 1;
+    if (acc != null)
+    {
+        type = (int)acc.Type;
+    }
 }
 
 <!DOCTYPE html>
@@ -29,7 +34,85 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+<style>
+    /* Style cho button mở chat */
+    .chat-open-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        outline: none;
+    }
 
+    /* Style cho popup chat */
+    .chat-popup {
+        display: none;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+    }
+
+    .white-icon {
+        color: white;
+    }
+
+    .chat-popup.open {
+        display: block;
+    }
+
+    .chat-popup .chat-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .chat-popup .chat-body {
+        padding: 10px;
+        background-color: #f9f9f9;
+        min-height: 200px;
+    }
+    /* fixed body */
+    .chat-body {
+        display: flex;
+        flex-direction: column;
+        height: calc(60vh - 100px); /* Đảm bảo chiều cao của phần cuộc trò chuyện không vượt quá chiều cao của cửa sổ trình duyệt */
+        overflow-y: auto; /* Cho phép cuộn dọc khi cần thiết */
+    }
+
+    /* CSS cho phần nhập tin nhắn */
+    .message-input-container {
+        position: fixed; /* Sử dụng position: fixed để giữ phần nhập tin nhắn cố định ở dưới */
+        bottom: 0; /* Phần nhập tin nhắn sẽ nằm ở dưới cùng */
+        left: 0; /* Chỉ định vị trí từ bên trái của cửa sổ trình duyệt */
+        width: 100%; /* Phần nhập tin nhắn sẽ chiếm toàn bộ chiều rộng của cửa sổ trình duyệt */
+        z-index: 999; /* Đảm bảo phần này nằm trên tất cả các phần khác */
+    }
+
+    /* CSS cho phần cuộn trong phần cuộc trò chuyện */
+    #discussion {
+        flex-grow: 1; /* Đảm bảo phần discussion mở rộng để điền vào không gian trống của phần chat-body */
+        overflow-y: auto; /* Cho phép cuộn dọc khi cần thiết */
+    }
+
+    /* CSS cho phần nhập tin nhắn */
+    .message-input-container {
+        padding: 10px; /* Thêm padding để tạo khoảng cách với nội dung */
+        background-color: #fff; /* Đảm bảo phần nhập tin nhắn có nền màu trắng */
+    }
+</style>
 <style>
     .dropdown {
         position: relative;
@@ -155,13 +238,133 @@
         </div>
     </div>
     <!-- Footer End -->
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- Body Chat -->
+    <div id="chatPopup" class="chat-popup" style="background-color: #eee;">
+        <div class="chat-header d-flex justify-content-between align-items-center p-3 bg-info text-white border-bottom-0" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <i class="fas fa-angle-left"></i>
+            <h3 class="align-content-center">Chat</h3>
+            <button onclick="toggleChat()"> <i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body">
+
+            @*    <div class="d-flex flex-row justify-content-start mb-4" >
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+            alt="avatar 1" style="width: 45px; height: 100%;">
+            <div class="p-3 ms-3" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);" id="discussion">
+            <ul class="small mb-0"></ul>
+            </div>
+            </div>
+            <div class="d-flex flex-row justify-content-end mb-4">
+            <div class="p-3 me-3 border" style="border-radius: 15px; background-color: #fbfbfb;">
+            <p class="small mb-0">Thank you, I really like your product.</p>
+            </div>
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+            alt="avatar 1" style="width: 45px; height: 100%;">
+            </div> *@
+            <div id="discussion" class="message-container">
+            </div>
+
+            <div class="form-outline ">
+                <label class="form-label" for="textAreaExample">Type your message</label>
+                <textarea class="form-control" id="message" rows="4"></textarea>
+                <button type="button" class="btn btn-info btn-rounded float-end " style="border-radius: 15px;" id="sendmessage" value="Send">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat icon -->
+    <a href="#" style=" border-radius: 50%;" onclick="toggleChat()" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-comments" aria-hidden="true"></i></a>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+@*     <script src="~/js/site.js" asp-append-version="true"></script> *@
 
     <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.4/signalr.min.js"></script>
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+        connection.start().catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("sendmessage").addEventListener("click", function (event) {
+                var type = @type;
+                var message = document.getElementById("message").value;
+                connection.invoke("SendMessage", type, message).catch(function (err) {
+                    return console.error(err.toString());
+                });
+            });
+        });
+
+        connection.on("ReceiveMessage", function (user, message) {
+            var discussionContainer = document.getElementById("discussion");
+            var messageContainer = createMessageContainer(user, message);
+            discussionContainer.appendChild(messageContainer);
+        });
+
+        function createMessageContainer(type, message) {
+            var messageContainer = document.createElement("div");
+            messageContainer.classList.add("d-flex", "flex-row", "mb-4");
+            if (@type == type) {
+                messageContainer.classList.add("justify-content-end");
+            } else {
+                messageContainer.classList.add("justify-content-start");
+            }
+            var avatarImg = document.createElement("img");
+            if (@type == type) {
+                avatarImg.src = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp";
+            } else {
+                avatarImg.src = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp";
+            }
+
+            avatarImg.alt = "avatar 1";
+            avatarImg.style.width = "45px";
+            avatarImg.style.height = "100%";
+
+            var messageContent = document.createElement("div");
+            messageContent.classList.add("ms-3");
+            messageContent.style.borderRadius = "15px";
+            messageContent.style.backgroundColor = "rgba(57, 192, 237, .2)";
+
+            var discussionUl = document.createElement("ul");
+            discussionUl.classList.add("small");
+            discussionUl.style.padding = "15px";
+            discussionUl.style.margin = "0";
+            discussionUl.id = "discussion";
+
+            // Thêm nội dung của tin nhắn trực tiếp vào phần tử ul
+            var messageItem = document.createElement("div");
+
+            messageItem.textContent = message;
+            if (@type != type) {
+                discussionUl.appendChild(messageItem);
+
+                messageContent.appendChild(discussionUl);
+                messageContainer.appendChild(avatarImg);
+                messageContainer.appendChild(messageContent);
+            } else {
+
+                messageContent.appendChild(discussionUl);
+                discussionUl.appendChild(messageItem);
+                messageContainer.appendChild(messageContent);
+                messageContainer.appendChild(avatarImg);
+
+            }
+
+
+
+            return messageContainer;
+        }
+
+
+    </script>
+    <script>
+        function toggleChat() {
+            var chatPopup = document.getElementById('chatPopup');
+            chatPopup.classList.toggle('open');
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -170,8 +373,8 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
-    <script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+@*     <script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script> *@
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>

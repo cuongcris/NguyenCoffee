@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.SignalR;
 using NguyenCoffeeWeb.Models;
 
 namespace NguyenCoffeeWeb.Pages.Products
@@ -9,11 +10,12 @@ namespace NguyenCoffeeWeb.Pages.Products
     {
         private readonly NguyenCoffeeWeb.Models.postgresContext _context;
 
-        public CreateModel(NguyenCoffeeWeb.Models.postgresContext context)
+        private readonly IHubContext<SignalrServer> _signalHub;
+        public CreateModel(NguyenCoffeeWeb.Models.postgresContext context, IHubContext<SignalrServer> signalHub)
         {
             _context = context;
+            _signalHub = signalHub;
         }
-
         public IActionResult OnGet()
         {
             if (HttpContext.Session.GetString("Type") != "0")
@@ -32,13 +34,9 @@ namespace NguyenCoffeeWeb.Pages.Products
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Products == null || Product == null)
-            {
-                return Page();
-            }
-
             _context.Products.Add(Product);
             await _context.SaveChangesAsync();
+            await _signalHub.Clients.All.SendAsync("LoadProducts");
 
             return RedirectToPage("./Index");
         }

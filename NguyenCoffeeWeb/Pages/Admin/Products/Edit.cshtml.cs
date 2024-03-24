@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using NguyenCoffeeWeb.Models;
 
@@ -10,9 +11,11 @@ namespace NguyenCoffeeWeb.Pages.Products
     {
         private readonly NguyenCoffeeWeb.Models.postgresContext _context;
 
-        public EditModel(NguyenCoffeeWeb.Models.postgresContext context)
+        private readonly IHubContext<SignalrServer> _signalHub;
+        public EditModel(NguyenCoffeeWeb.Models.postgresContext context, IHubContext<SignalrServer> signalHub)
         {
             _context = context;
+            _signalHub = signalHub;
         }
 
         [BindProperty]
@@ -44,16 +47,12 @@ namespace NguyenCoffeeWeb.Pages.Products
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.Attach(Product).State = EntityState.Modified;
 
             try
             {
                 await _context.SaveChangesAsync();
+                await _signalHub.Clients.All.SendAsync("LoadProducts");
             }
             catch (DbUpdateConcurrencyException)
             {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SP24\\PRN221\\Project\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj": {}
+    "C:\\Users\\lvttr\\OneDrive\\Desktop\\New folder\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj": {}
   },
   "projects": {
-    "E:\\SP24\\PRN221\\Project\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj": {
+    "C:\\Users\\lvttr\\OneDrive\\Desktop\\New folder\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SP24\\PRN221\\Project\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj",
+        "projectUniqueName": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New folder\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj",
         "projectName": "MoodKafe_Client_Test",
-        "projectPath": "E:\\SP24\\PRN221\\Project\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj",
-        "packagesPath": "C:\\Users\\thien\\.nuget\\packages\\",
-        "outputPath": "E:\\SP24\\PRN221\\Project\\NguyenCoffee\\MoodKafe_Client_Test\\obj\\",
+        "projectPath": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New folder\\NguyenCoffee\\MoodKafe_Client_Test\\MoodKafe_Client_Test.csproj",
+        "packagesPath": "C:\\Users\\lvttr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lvttr\\OneDrive\\Desktop\\New folder\\NguyenCoffee\\MoodKafe_Client_Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\thien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lvttr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -57,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

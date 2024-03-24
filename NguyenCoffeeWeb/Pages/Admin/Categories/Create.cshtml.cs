@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
 using NguyenCoffeeWeb.Models;
 
 namespace NguyenCoffeeWeb.Pages.Categories
@@ -8,9 +9,11 @@ namespace NguyenCoffeeWeb.Pages.Categories
     {
         private readonly NguyenCoffeeWeb.Models.postgresContext _context;
 
-        public CreateModel(NguyenCoffeeWeb.Models.postgresContext context)
+        private readonly IHubContext<SignalrServer> _signalHub;
+        public CreateModel(NguyenCoffeeWeb.Models.postgresContext context, IHubContext<SignalrServer> signalHub)
         {
             _context = context;
+            _signalHub = signalHub;
         }
 
         public IActionResult OnGet()
@@ -37,7 +40,7 @@ namespace NguyenCoffeeWeb.Pages.Categories
 
             _context.Categories.Add(Category);
             await _context.SaveChangesAsync();
-
+            await _signalHub.Clients.All.SendAsync("LoadCategories");
             return RedirectToPage("./Index");
         }
     }

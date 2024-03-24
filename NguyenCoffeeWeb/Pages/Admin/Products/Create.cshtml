@@ -70,6 +70,11 @@ h4{
                 <select asp-for="Product.CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
             </div>
             <div class="form-group">
+                <label asp-for="Product.Description" class="control-label"></label>
+                <input asp-for="Product.Description" class="form-control" />
+                <span asp-validation-for="Product.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -83,3 +88,6 @@ h4{
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<script src="~/js/site.js"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>

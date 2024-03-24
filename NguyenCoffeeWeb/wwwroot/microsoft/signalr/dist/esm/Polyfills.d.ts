@@ -1,5 +1,5 @@
 /** @private */
-export type EventSourceConstructor = new (url: string, eventSourceInitDict?: EventSourceInit) => EventSource;
+export declare type EventSourceConstructor = new (url: string, eventSourceInitDict?: EventSourceInit) => EventSource;
 /** @private */
 export interface WebSocketConstructor {
     new (url: string, protocols?: string | string[], options?: any): WebSocket;

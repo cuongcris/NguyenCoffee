@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using NguyenCoffeeWeb.Models;
 
@@ -9,9 +10,11 @@ namespace NguyenCoffeeWeb.Pages.Accounts
     {
         private readonly NguyenCoffeeWeb.Models.postgresContext _context;
 
-        public DeleteModel(NguyenCoffeeWeb.Models.postgresContext context)
+        private readonly IHubContext<SignalrServer> _signalHub;
+        public DeleteModel(NguyenCoffeeWeb.Models.postgresContext context, IHubContext<SignalrServer> signalHub)
         {
             _context = context;
+            _signalHub = signalHub;
         }
 
         [BindProperty]
@@ -54,6 +57,7 @@ namespace NguyenCoffeeWeb.Pages.Accounts
                 Account = account;
                 _context.Accounts.Remove(Account);
                 await _context.SaveChangesAsync();
+                await _signalHub.Clients.All.SendAsync("LoadAccount");
             }
 
             return RedirectToPage("./Index");

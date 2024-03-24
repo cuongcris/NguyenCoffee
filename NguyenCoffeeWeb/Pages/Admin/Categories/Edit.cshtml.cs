@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using NguyenCoffeeWeb.Models;
 
@@ -8,10 +9,11 @@ namespace NguyenCoffeeWeb.Pages.Categories
     public class EditModel : PageModel
     {
         private readonly NguyenCoffeeWeb.Models.postgresContext _context;
-
-        public EditModel(NguyenCoffeeWeb.Models.postgresContext context)
+        private readonly IHubContext<SignalrServer> _signalHub;
+        public EditModel(NguyenCoffeeWeb.Models.postgresContext context, IHubContext<SignalrServer> signalHub)
         {
             _context = context;
+            _signalHub = signalHub;
         }
 
         [BindProperty]
@@ -52,6 +54,7 @@ namespace NguyenCoffeeWeb.Pages.Categories
             try
             {
                 await _context.SaveChangesAsync();
+                await _signalHub.Clients.All.SendAsync("LoadCategories");
             }
             catch (DbUpdateConcurrencyException)
             {

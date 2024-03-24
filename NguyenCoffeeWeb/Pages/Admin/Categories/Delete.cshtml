@@ -14,8 +14,8 @@
         height: 500px;
     }
       dl.row {
-    max-width: 800px; 
-    margin: 0 auto; 
+    max-width: 800px;
+    margin: 0 auto;
     }
     .deletecontainer{
           text-align:center;
@@ -58,7 +58,7 @@
             @Html.DisplayFor(model => model.Category.Description)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="Category.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
@@ -66,3 +66,6 @@
     </form>
 </div>
 </div>
+<script src="~/js/site.js"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
