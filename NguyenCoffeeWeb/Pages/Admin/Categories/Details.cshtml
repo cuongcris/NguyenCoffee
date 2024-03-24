@@ -13,6 +13,13 @@
     .container {
         height: 500px;
     }
+        .detailscontainer{
+        text-align:center;
+    }
+    dl.row {
+    max-width: 800px; 
+    margin: 0 auto; 
+}
 </style>
 <!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5">
@@ -24,6 +31,7 @@
         </div>
     </div>
 </div>
+<div class="detailscontainer">
 <h1>Details</h1>
 
 <div>
@@ -53,4 +61,5 @@
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Category?.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
+</div>
 </div>
